@@ -1,19 +1,22 @@
-cap = ['a', 'c', 'e', 'g', 'h', 'j', 'l', 'o', 'q', 'r', 's', 'u', 'w', 'y']
+import random
 
 print("::WELCOME TO IDIOTIC TEXT GENERATOR::")
 print("::KEEP ON TYPING OR ENTER . TO EXIT")
 
 def idiotize(str):
-    str = str.lower()
-    idioticStr = ''
-    for c in str:
-        
-        if c in cap:
-            idioticStr += c.upper()
-        else:
-            idioticStr += c
-    
-    return idioticStr
+	str = str.lower()
+	idioticStr = ''
+	count = random.randint(1,2)
+	for c in str:
+		if c == 'a':
+			idioticStr += '4'
+		elif count % 2 == 0:
+			idioticStr += c.upper()
+		else:
+			idioticStr += c
+		count += 1
+		
+	return idioticStr
 
 while True:
     line = input("Enter non-idiotic text: ")
